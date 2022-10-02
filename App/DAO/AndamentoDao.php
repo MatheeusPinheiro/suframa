@@ -1,6 +1,6 @@
 <?php
 
-class PrioridadeDao
+class AndamentoDao
 {
 
 	private $conexao;
@@ -16,7 +16,7 @@ class PrioridadeDao
     public function select()
     {
         $sql = "SELECT *
-        FROM prioridade
+        FROM andamento
         ";
 
         $stmt = $this->conexao->prepare($sql);

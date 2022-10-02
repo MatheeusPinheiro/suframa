@@ -4,6 +4,8 @@ class LoginModel
 {
     public $id;
     public $nome;
+    public $avatar;
+    public $cpf;
     public $login;
     public $senha;
     public $tipouser;
@@ -31,7 +33,7 @@ class LoginModel
 
 	public function getByLogin(string $login)
     {
-        include 'DAO/LoginDAO.php ';
+        include 'DAO/LoginDAO.php';
         $dao = new LoginDAO();
 
         $obj = $dao->selectByLogin($login);

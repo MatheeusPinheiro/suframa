@@ -56,3 +56,5 @@ document.querySelector('.close-big-foto-modal i').addEventListener('click', () =
 
 
 
+
+

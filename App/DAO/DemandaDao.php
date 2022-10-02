@@ -30,35 +30,44 @@ class DemandaDao
 		$stmt->bindValue(7, $model->andamento_id);
 		$stmt->bindValue(8, $model->funcionario_id);
 
-		$stmt->execute(); 
+		$stmt->execute();
 		header('Location: /paginaInicial');
 	}
 
-	public function update()
+	public function selectById(int $id)
 	{
+		$sql = "SELECT demanda.id, descricao, data_inicio, data_termino, observacao, prioridade.nome as prioridade, tipo_demanda.nome as tipoDemanda, andamento.porcentagem, funcionario.id as func 
+		FROM demanda, andamento, tipo_demanda, prioridade, funcionario 
+		WHERE andamento.id = andamento_id 
+		and prioridade.id = prioridade_id 
+		and tipo_demanda_id = tipo_demanda.id 
+		and funcionario_id = funcionario.id 
+		and funcionario_id=?
+		ORDER BY demanda.id
+		DESC
+        ";
+
+		$stmt = $this->conexao->prepare($sql);
+		$stmt->bindValue(1, $id);
+		$stmt->execute();
+
+		return $stmt->fetchAll(PDO::FETCH_CLASS);
 	}
 
-	public function select()
+	public function selectAll()
 	{
+		$sql = "SELECT demanda.id, descricao, data_inicio, data_termino, observacao, prioridade.nome as prioridade, tipo_demanda.nome as tipoDemanda, andamento.porcentagem, funcionario.id as func 
+		FROM demanda, andamento, tipo_demanda, prioridade, funcionario 
+		WHERE andamento.id = andamento_id 
+		and prioridade.id = prioridade_id 
+		and tipo_demanda_id = tipo_demanda.id 
+		and funcionario_id = funcionario.id
+		
+        ";
+
+		$stmt = $this->conexao->prepare($sql);
+		$stmt->execute();
+
+		return $stmt->fetchAll(PDO::FETCH_CLASS);
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

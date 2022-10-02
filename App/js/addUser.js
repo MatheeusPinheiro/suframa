@@ -30,3 +30,9 @@ let limparCampos = ()=>{
     let login = document.querySelector('#login').value = '';
     let senha = document.querySelector('#senha').value = '';
 }
+
+
+
+let area = document.querySelector('.adm-area');
+
+console.log(area.lenght);

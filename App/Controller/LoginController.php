@@ -1,6 +1,6 @@
 
 <?php
-
+session_start() or die;
 class LoginController
 {
 
@@ -25,17 +25,10 @@ class LoginController
 			} else if ($_POST['usuario'] == 2) {
 				$_SESSION["login"] = $_POST["login"];
 				$_SESSION["usuario"] = $_POST["usuario"];
-				$modelLogin->login = $modelLogin->getByLogin($_POST['login']);
 				header("location: /paginaInicial");
 			}
 		} else {
 			header("location: /?erro");
 		}
-	}
-
-
-	public static function login()
-	{
-		include 'Model/LoginModel.php';
 	}
 }

@@ -5,6 +5,8 @@ include 'Controller/FuncionarioController.php';
 include 'Controller/AdmController.php';
 include 'Controller/LoginController.php';
 include 'controller/DemandaController.php';
+include 'controller/PaginaNaoEncontradaController.php';
+
 $url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
 
@@ -22,9 +24,16 @@ switch($url){
 		FuncionarioController::save();
 	break;
 	
+	case '/adm/update':
+		FuncionarioController::update();
+	break;
 	
 	case '/atualizarFuncionario':
 		AdmController::alterarFuncionario();
+	break;
+
+	case '/excluirFuncionario':
+		AdmController::excluirFuncionario();
 	break;
 
 	case '/paginaInicial':
@@ -40,6 +49,6 @@ switch($url){
     break;
 
 	default:
-		echo 'Erro  404';
+		PaginaNaoEncontradaController::paginaNaoEncontrada();
 	break;
 };

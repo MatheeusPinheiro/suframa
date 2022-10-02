@@ -1,15 +1,24 @@
 <?php
 
-class PrioridadeModel {
-   
-   //CAMPOS DA TABELA FUNCIONARIO
-   public $id, $nome;
+class PrioridadeModel
+{
 
-   public function save(){
-	   include 'DAO/FuncionarioDao.php';
+   public $id;
+   public $nome;
+   private $conexao;
 
-	   $dao = new PrioridadeDao();
+   public function __construct()
+   {
+      $dsn = "mysql:host=localhost:3306;dbname=suframa";
 
-	   $dao->insert($this);
+      $this->conexao = new PDO($dsn, 'root', '1234');
+   }
+
+   public function getAllRows()
+   {
+      include 'DAO/PrioridadeDao.php';
+
+      $dao = new PrioridadeDao();
+      $this->rows = $dao->select();
    }
 }

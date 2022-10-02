@@ -181,14 +181,15 @@
     outline: none;
     font-size: 16px;
     letter-spacing: 2px;
-    
+
 }
-.search-func input:nth-child(1){
-    width: 340px ;
+
+.search-func input:nth-child(1) {
+    width: 340px;
     margin-right: 7px;
 }
 
-.search-func input:nth-child(2){
+.search-func input:nth-child(2) {
     background-color: var(--background-color);
     border: 0;
     outline: none;
@@ -198,7 +199,7 @@
     border-radius: 7px;
 }
 
-.search-func input:nth-child(2):hover{
+.search-func input:nth-child(2):hover {
     opacity: .8;
 }
 
@@ -272,7 +273,7 @@
 
 /*INFOS USER -*/
 
-.infos-user form{
+.infos-user form {
     background-color: #007bff;
     flex: 1;
 }
@@ -431,10 +432,13 @@
     display: none;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(255, 255, 255, 0.4);
     z-index: 100;
     flex-direction: column;
+    overflow-y: hidden;
 }
+
+
 
 .abriCadUser {
     display: flex;
@@ -451,25 +455,51 @@
 }
 
 .close-modal-user i {
-    font-size: 21px;
-    color: #fff;
+    font-size: 25px;
+    color: #191919;
     padding-right: 10px;
     cursor: pointer;
 }
 
+.close-modal-user i:hover{
+    color: rgb(238, 60, 29);
+}
+
 .container-area-cad {
-    width: 600px;
-    height: 600px;
+    width: 730px;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    height: auto;
+    padding: 30px 0;
     flex-direction: column;
     background-color: rgba(24, 24, 24, 0.8);
-    border-top-right-radius: 20px;
-    border-bottom-left-radius: 20px;
     overflow-x: hidden;
     box-shadow: 0 0 10px var(--background-color);
     margin-bottom: 20px;
+}
+
+.lado-a {
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.lado-a h2{
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    font-family: var(--font-secundary);
+    letter-spacing: 1px;
+    font-size: 19px;
+}
+
+.lado-b {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 
@@ -478,9 +508,6 @@
     width: 100%;
     height: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
 
 }
 
@@ -489,6 +516,7 @@
     height: 40px;
     font-size: 18px;
     padding-left: 10px;
+    padding-right: 10px;
     border-top-left-radius: 10px;
     border-bottom-right-radius: 10px;
 }
@@ -511,11 +539,10 @@
     margin-right: -30px;
     background-color: #1cd5ad;
     z-index: 99;
-    border-top-left-radius: 15px;
 }
 
 .select {
-    width: calc(100% - 10px);
+    width: 100%;
     height: 40px;
     font-size: 18px;
     padding-left: 10px;
@@ -566,8 +593,6 @@
     background-color: #c1c1c1;
     letter-spacing: 2px;
     font-weight: 500;
-    border-bottom-right-radius: 20px;
-    border-top-left-radius: 20px;
 }
 
 .container-area-cad form .input-item input::placeholder {
@@ -588,13 +613,14 @@
 
 
 .img-perfil {
-    width: 90px;
-    height: 90px;
-    background-color: #018265;
+    width: 200px;
+    height: 200px;
+    background-color: transparent;
     display: flex;
     justify-content: center;
     align-items: center;
     transition: all ease-in 0.3s;
+    border-radius: 15px;
 }
 
 .img-perfil:hover {
@@ -603,8 +629,8 @@
 
 
 .img-perfil img {
-    width: 95%;
-    height: 95%;
+    width: 85%;
+    height: 85%;
     cursor: pointer;
 }
 
@@ -626,9 +652,8 @@
     font-size: 20px;
     letter-spacing: 2px;
     cursor: pointer;
+    border: 0;
     transition: all ease 1s;
-    border-bottom-right-radius: 20px;
-    border-top-left-radius: 20px;
 }
 
 .entrar:hover {
@@ -734,7 +759,7 @@
     display: flex;
     flex-direction: column;
     padding: 0 0 20px 0;
-    
+
 }
 
 .close-modal-demanda {
@@ -941,7 +966,7 @@
 }
 
 
-.area-user label a{
+.area-user label a {
     display: inline-flex;
     justify-content: flex-end;
     width: 100%;
@@ -950,15 +975,24 @@
     align-items: center;
     text-decoration: none;
     color: var(--background-color);
-  
+
 }
 
-.area-user label a i{
+
+.area-user label a i {
     margin-right: 10px;
     font-size: 25px;
 }
 
-.acoes-user{
+.area-user label a i:nth-child(1):hover{
+    color: #007bff;
+}
+
+.area-user label a i:nth-child(2):hover{
+    color: rgb(221, 44, 12);
+}
+
+.acoes-user {
     width: 100%;
     display: flex;
     justify-content: flex-end;
@@ -1015,7 +1049,7 @@
 }
 
 .modal-grid .item {
-   flex: 1;
+    flex: 1;
     background-color: #007bff;
 }
 
@@ -1028,49 +1062,50 @@
 /* ANIMAÇÕES */
 
 @keyframes fade-in {
-    0%{
-      opacity: 0;
-    }
-    100%{
-      opacity: 1;
-    }
- }
-
- @keyframes left-in {
-    0%{
-      transform: translate(200px);
-      opacity: 0;
+    0% {
+        opacity: 0;
     }
 
-    100%{
-      transform: translate(0);
-      opacity: 1;
+    100% {
+        opacity: 1;
     }
- }
+}
 
- @keyframes right-in {
-    0%{
-      transform: translate(-200px);
-      opacity: 0;
-    }
-
-    100%{
-      transform: translate(0);
-      opacity: 1;
-    }
- }
-
- @keyframes up-in {
-    0%{
-      transform: translateY(200px);
-      opacity: 0;
+@keyframes left-in {
+    0% {
+        transform: translate(200px);
+        opacity: 0;
     }
 
-    100%{
-      transform: translateY(0);
-      opacity: 1;
+    100% {
+        transform: translate(0);
+        opacity: 1;
     }
- }
+}
+
+@keyframes right-in {
+    0% {
+        transform: translate(-200px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translate(0);
+        opacity: 1;
+    }
+}
+
+@keyframes up-in {
+    0% {
+        transform: translateY(200px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
 
 
 
@@ -1100,7 +1135,7 @@
     }
 
     .capa {
-        height: 190px;        
+        height: 190px;
         animation: left-in 0.8s ease-in forwards;
     }
 
@@ -1111,7 +1146,7 @@
     }
 
     .user-info {
-        margin-top: 40px;        
+        margin-top: 40px;
         animation: right-in 0.8s ease-in forwards;
     }
 
@@ -1123,7 +1158,7 @@
         z-index: 100;
         width: calc(100% - 30px);
         height: 75vh;
-        
+
         animation: fade-in 1.2s ease-in forwards;
     }
 
@@ -1145,37 +1180,40 @@
     .observacao-option,
     .modal-demanda-button {
         width: calc(100% - 10px);
-        
+
     }
 
-    .demanda-option span, .observacao-option span{
+    .demanda-option span,
+    .observacao-option span {
         display: none;
     }
 
-    .observacao-option textarea{
+    .observacao-option textarea {
         padding: 3px 5px;
         font-size: 18px;
         height: inherit;
     }
-    .observacao-option{
+
+    .observacao-option {
         margin-top: 10px;
     }
 
-    .observacao-option textarea::placeholder{
+    .observacao-option textarea::placeholder {
         font-size: 18px;
     }
 
-    .demanda-option input, .demanda-option select{
+    .demanda-option input,
+    .demanda-option select {
         font-size: 18px;
         height: inherit;
     }
-  
-    .demanda-option{
+
+    .demanda-option {
         margin-top: 10px;
         height: 36px;
     }
 
-    .nome-funcionario span{
+    .nome-funcionario span {
         font-size: 20px;
     }
 
@@ -1223,49 +1261,66 @@
         font-size: 18px;
         margin-bottom: 7px;
     }
-    
+
 
     .search-func input::placeholder {
         font-size: 19px;
     }
 
+    /*Cadastrar Usuário */
+
+    .lado-a .img-perfil{
+        width: 110px;
+        height: 110px;
+    }
+
+    .lado-a h2{
+        display: none;
+    }
+
+    .lado-b{
+        flex: 3;
+    }
     .container-area-cad {
         width: calc(100% - 20px);
-        padding: 25px 0;
+       
+    }
+    .container-area-cad form{
+        flex-direction: column;
     }
 
-    .container-area-cad form .input-item{
+    .container-area-cad form .input-item {
         width: calc(100% - 25px);
-       margin-bottom: 14px;
+        margin-bottom: 14px;
     }
 
-    .container-area-cad form .input-item select{
+    .container-area-cad form .input-item select {
         width: calc(100% - 2px);
     }
 
     .entrar input {
-        width: calc(100%  - 25px);
+        width: calc(100% - 25px);
     }
 
-    .close-modal-user{
+    .close-modal-user {
         width: calc(100% - 43px);
         margin-bottom: 15px;
     }
 
-    .info-modal-user-area{
-        width: calc(100%  - 10px);
+    .info-modal-user-area {
+        width: calc(100% - 10px);
         padding: 0 0 20px 0;
         height: auto;
     }
 
 
-    .modal-add-user{
+    .modal-add-user {
         justify-content: flex-start;
         padding-top: 30px;
     }
 
 
-    .adm{
+    .adm {
         animation: right-in 0.8s ease-in forwards;
     }
 }
@@ -1316,37 +1371,40 @@
     .observacao-option,
     .modal-demanda-button {
         width: calc(100% - 10px);
-        
+
     }
 
-    .demanda-option span, .observacao-option span{
+    .demanda-option span,
+    .observacao-option span {
         display: none;
     }
 
-    .observacao-option textarea{
+    .observacao-option textarea {
         padding: 3px 5px;
         font-size: 18px;
         height: inherit;
     }
-    .observacao-option{
+
+    .observacao-option {
         margin-top: 10px;
     }
 
-    .observacao-option textarea::placeholder{
+    .observacao-option textarea::placeholder {
         font-size: 18px;
     }
 
-    .demanda-option input, .demanda-option select{
+    .demanda-option input,
+    .demanda-option select {
         font-size: 18px;
         height: inherit;
     }
-  
-    .demanda-option{
+
+    .demanda-option {
         margin-top: 10px;
         height: 36px;
     }
 
-    .nome-funcionario span{
+    .nome-funcionario span {
         font-size: 20px;
     }
 
@@ -1377,7 +1435,7 @@
         width: auto;
     }
 
- 
+
 
     .search-func {
         padding-right: 0;
@@ -1402,32 +1460,32 @@
         padding: 25px 0;
     }
 
-    .container-area-cad form .input-item{
+    .container-area-cad form .input-item {
         width: calc(100% - 25px);
-       margin-bottom: 14px;
+        margin-bottom: 14px;
     }
 
-    .container-area-cad form .input-item select{
+    .container-area-cad form .input-item select {
         width: calc(100% - 2px);
     }
 
     .entrar input {
-        width: calc(100%  - 25px);
+        width: calc(100% - 25px);
     }
 
-    .close-modal-user{
+    .close-modal-user {
         width: calc(100% - 43px);
         margin-bottom: 15px;
     }
 
-    .info-modal-user-area{
-        width: calc(100%  - 10px);
+    .info-modal-user-area {
+        width: calc(100% - 10px);
         padding: 0 0 20px 0;
         height: auto;
     }
 
 
-    .modal-add-user{
+    .modal-add-user {
         justify-content: flex-start;
         padding-top: 30px;
     }
